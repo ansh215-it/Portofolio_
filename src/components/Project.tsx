@@ -12,6 +12,7 @@ const projects = [
     image: projectQuestlime,
     githubLink: 'https://github.com/ansh215-it/Questlime_Adventure'
   },
+  
 //   {
 //     title: 'Intelligent Parking and Helmet Detection',
 //     desc: 'Object detection model to identify helmets and manage parking seamlessly. Built using visual data processing and logistic regression modeling for academic data labeling.',
