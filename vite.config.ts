@@ -8,5 +8,5 @@ export default defineConfig({
     tailwindcss(),
   ],
   // GANTI 'yubz-portfolio' dengan nama repository GitHub Anda jika berbeda!
-  base: base: '/Portofolio_/', 
+  base: '/Portofolio_/', 
 })
