@@ -2,6 +2,9 @@
 import React from 'react';
 import AnimatedWrapper from './AnimatedWrapper';
 import projectQuestlime from "../assets/Questlime.png";
+import projectHelmetDetection from "../assets/detection_helm.png";
+import projectMonteCarlo from "../assets/monte_carlo.png";
+import projectwebsiteakademik from "../assets/login_web_akademik.png";
 import icon_Github from "../assets/github.svg";
 
 const projects = [
@@ -12,13 +15,30 @@ const projects = [
     image: projectQuestlime,
     githubLink: 'https://github.com/ansh215-it/Questlime_Adventure'
   },
-  
-//   {
-//     title: 'Intelligent Parking and Helmet Detection',
-//     desc: 'Object detection model to identify helmets and manage parking seamlessly. Built using visual data processing and logistic regression modeling for academic data labeling.',
-//     tech: ['Python', 'YOLO', 'OpenCV', 'Machine Learning'],
-//     image: 'https://images.unsplash.com/photo-1573431526435-0210287ff122?auto=format&fit=crop&w=800&q=80'
-//   }
+
+  {
+    title: 'Intelligent Parking and Helmet Detection',
+    desc: 'Object detection model to identify helmets. Built using visual data processing and logistic regression modeling for academic data labeling.',
+    tech: ['Python', 'YOLO', 'OpenCV', 'Machine Learning'],
+    image: projectHelmetDetection,
+    githubLink: 'https://github.com/ansh215-it/Detection_Helmet'
+  },
+
+  {
+    title: 'Monte Carlo Simulation Monster Chase NPC',
+    desc: 'A comprehensive Monte Carlo simulation tool for modeling and analyzing the behavior of a monster chase NPC in a game environment. Utilizes statistical methods to predict outcomes and optimize game mechanics.',
+    tech: ['Python', 'NumPy', 'Matplotlib', 'Simulation'],
+    image: projectMonteCarlo,
+    githubLink: 'https://github.com/ansh215-it/MonteCarlo_Implementation'
+  },
+
+  {
+    title: 'Academic Website Login System',
+    desc: 'A secure and user-friendly login system for an academic website, featuring role-based access control and data validation.',
+    tech: ['PHP', 'JavaScript', 'CSS', 'Bootstrap', 'MySQL','Laravel'],
+    image: projectwebsiteakademik,
+    githubLink: 'https://github.com/ansh215-it/Website_Project_PBP_Akademik'
+  }
 ];
 
 const Project: React.FC = () => {
