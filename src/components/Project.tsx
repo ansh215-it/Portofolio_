@@ -2,20 +2,22 @@
 import React from 'react';
 import AnimatedWrapper from './AnimatedWrapper';
 import projectQuestlime from "../assets/Questlime.png";
+import icon_Github from "../assets/github.svg";
 
 const projects = [
   {
     title: 'Questlime Adventure',
     desc: 'An educational turn-based 2D game featuring pixel art mechanics to make learning interactive. Designed using standard object-oriented programming (OOP) principles and validated through System Usability Scale (SUS) testing.',
     tech: ['Godot 4.6', 'GDScript', 'Aseprite'],
-    image: projectQuestlime
+    image: projectQuestlime,
+    githubLink: 'https://github.com/ansh215-it/Questlime_Adventure'
   },
-  {
-    title: 'Intelligent Parking and Helmet Detection',
-    desc: 'Object detection model to identify helmets and manage parking seamlessly. Built using visual data processing and logistic regression modeling for academic data labeling.',
-    tech: ['Python', 'YOLO', 'OpenCV', 'Machine Learning'],
-    image: 'https://images.unsplash.com/photo-1573431526435-0210287ff122?auto=format&fit=crop&w=800&q=80'
-  }
+//   {
+//     title: 'Intelligent Parking and Helmet Detection',
+//     desc: 'Object detection model to identify helmets and manage parking seamlessly. Built using visual data processing and logistic regression modeling for academic data labeling.',
+//     tech: ['Python', 'YOLO', 'OpenCV', 'Machine Learning'],
+//     image: 'https://images.unsplash.com/photo-1573431526435-0210287ff122?auto=format&fit=crop&w=800&q=80'
+//   }
 ];
 
 const Project: React.FC = () => {
@@ -32,10 +34,31 @@ const Project: React.FC = () => {
               className="flex flex-col md:flex-row items-center gap-8 p-6 md:p-8 bg-[#1a1a1a] hover:bg-[#222] rounded-3xl border border-white/5 transition-all"
             >
               {/* Kiri: Detail Proyek */}
-              <div className="flex-1 space-y-4">
-                <h3 className="text-2xl md:text-3xl font-bold text-[#8b5cf6]">
-                  {project.title}
-                </h3>
+              <div className="flex-1 space-y-4 w-full">
+                
+                <div className="flex justify-between items-start md:items-center">
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#8b5cf6]">
+                    {project.title}
+                  </h3>
+                  
+                  {/* Tombol GitHub dengan Background Lingkaran Putih */}
+                  {project.githubLink && (
+                    <a 
+                      href={project.githubLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="bg-white/90 hover:bg-white rounded-full p-1.5 transition-all hover:scale-110 inline-flex items-center justify-center shadow-md"
+                      title="View Source on GitHub"
+                    >
+                      <img 
+                        src={icon_Github} 
+                        alt="GitHub Repository" 
+                        className="w-6 h-6 opacity-80" 
+                      />
+                    </a>
+                  )}
+                </div>
+
                 <p className="text-textSecondary leading-relaxed">
                   {project.desc}
                 </p>
