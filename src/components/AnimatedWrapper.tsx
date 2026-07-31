@@ -1,5 +1,5 @@
 // src/components/AnimatedWrapper.tsx
-import React, { ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
 import { motion } from 'framer-motion';
 
 interface AnimatedWrapperProps {
