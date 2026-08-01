@@ -33,7 +33,7 @@ const projects = [
   },
 
   {
-    title: 'Academic Website Login System',
+    title: 'SAKURA (Sistem Analisis Kuliah Unggul dan Rekapitulasi Akademik)',
     desc: 'A secure and user-friendly login system for an academic website, featuring role-based access control and data validation.',
     tech: ['PHP', 'JavaScript', 'CSS', 'Bootstrap', 'MySQL','Laravel'],
     image: projectwebsiteakademik,
