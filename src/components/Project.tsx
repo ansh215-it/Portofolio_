@@ -1,6 +1,6 @@
 // src/components/Project.tsx
 import React from 'react';
-// import AnimatedWrapper from './AnimatedWrapper'; // Kita matikan sementara
+import AnimatedWrapper from './AnimatedWrapper'; // Dinyalakan kembali!
 import projectQuestlime from "../assets/Questlime.png";
 import projectHelmetDetection from "../assets/detection_helm.png";
 import projectMonteCarlo from "../assets/monte_carlo.png";
@@ -41,66 +41,72 @@ const projects = [
 const Project: React.FC = () => {
   return (
     <section id="project" className="section-container pt-24">
-      {/* AnimatedWrapper dihapus sementara untuk testing */}
-        <h2 className="text-5xl font-extrabold text-textPrimary mb-8">Notable Projects</h2>
-        <div className="w-full h-px bg-white/10 mb-12"></div>
+      <AnimatedWrapper>
+        {/* Teks Judul: Hitam di Light Mode, Putih/textPrimary di Dark Mode */}
+        <h2 className="text-5xl font-extrabold text-gray-900 dark:text-textPrimary mb-8 transition-colors">
+          Notable Projects
+        </h2>
+        
+        {/* Garis Pembatas: Abu-abu di Light, Putih Transparan di Dark */}
+        <div className="w-full h-px bg-gray-300 dark:bg-white/10 mb-12 transition-colors"></div>
 
         <div className="space-y-8">
           {projects.map((project, idx) => (
-            <div 
-              key={idx} 
-              className="flex flex-col md:flex-row items-center gap-8 p-6 md:p-8 bg-[#1a1a1a] hover:bg-[#222] rounded-3xl border border-white/5 transition-all"
+            <div
+              key={idx}
+              className="flex flex-col items-start gap-8 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:bg-gray-50 dark:border-white/5 dark:bg-[#1a1a1a] dark:shadow-none dark:hover:bg-[#222] lg:flex-row lg:items-center lg:p-8"
             >
-              {/* Kiri: Detail Proyek */}
-              <div className="flex-1 space-y-4 w-full">
-                
-                <div className="flex justify-between items-start md:items-center">
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#8b5cf6]">
+              <div className="w-full flex-1 space-y-4">
+                <div className="flex flex-wrap items-start justify-between gap-3 lg:items-center">
+                  <h3 className="text-2xl font-bold text-purple-600 transition-colors md:text-3xl dark:text-[#8b5cf6]">
                     {project.title}
                   </h3>
-                  
-                  {/* Tombol GitHub dengan Background Lingkaran Putih */}
+
                   {project.githubLink && (
-                    <a 
-                      href={project.githubLink} 
-                      target="_blank" 
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-white/90 hover:bg-white rounded-full p-1.5 transition-all hover:scale-110 inline-flex items-center justify-center shadow-md shrink-0 ml-4"
+                      className="ml-0 inline-flex shrink-0 items-center justify-center rounded-full bg-gray-800 p-1.5 shadow-md transition-all hover:scale-110 hover:bg-black dark:bg-white/90 dark:hover:bg-white"
                       title="View Source on GitHub"
                     >
-                      <img 
-                        src={icon_Github} 
-                        alt="GitHub Repository" 
-                        className="w-6 h-6 opacity-80" 
+                      <img
+                        src={icon_Github}
+                        alt="GitHub Repository"
+                        className="h-6 w-6 opacity-90 invert dark:opacity-80 dark:invert-0"
                       />
                     </a>
                   )}
                 </div>
 
-                <p className="text-textSecondary leading-relaxed">
+                <p className="leading-relaxed text-gray-600 transition-colors dark:text-textSecondary">
                   {project.desc}
                 </p>
+
                 <div className="flex flex-wrap gap-3 pt-2">
                   {project.tech.map((t, i) => (
-                    <span key={i} className="text-sm font-medium text-textSecondary bg-white/5 px-4 py-1.5 rounded-md border border-white/10">
+                    <span
+                      key={i}
+                      className="rounded-md border border-gray-200 bg-gray-100 px-4 py-1.5 text-sm font-medium text-gray-700 transition-colors dark:border-white/10 dark:bg-white/5 dark:text-textSecondary"
+                    >
                       {t}
                     </span>
                   ))}
                 </div>
               </div>
 
-              {/* Kanan: Gambar Proyek */}
-              <div className="w-full md:w-[400px] h-[250px] rounded-2xl overflow-hidden shrink-0 border border-white/10 relative group">
-                <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors z-10"></div>
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              <div className="group relative h-[220px] w-full shrink-0 overflow-hidden rounded-2xl border border-gray-200 bg-gray-100 transition-colors sm:h-[250px] lg:w-[360px] dark:border-white/10">
+                <div className="absolute inset-0 z-10 bg-purple-500/10 transition-colors group-hover:bg-transparent dark:bg-primary/20"></div>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
             </div>
           ))}
         </div>
+      </AnimatedWrapper>
     </section>
   );
 };
