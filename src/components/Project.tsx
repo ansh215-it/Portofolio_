@@ -1,6 +1,6 @@
 // src/components/Project.tsx
 import React from 'react';
-import AnimatedWrapper from './AnimatedWrapper';
+// import AnimatedWrapper from './AnimatedWrapper'; // Kita matikan sementara
 import projectQuestlime from "../assets/Questlime.png";
 import projectHelmetDetection from "../assets/detection_helm.png";
 import projectMonteCarlo from "../assets/monte_carlo.png";
@@ -15,7 +15,6 @@ const projects = [
     image: projectQuestlime,
     githubLink: 'https://github.com/ansh215-it/Questlime_Adventure'
   },
-
   {
     title: 'Intelligent Parking and Helmet Detection',
     desc: 'Object detection model to identify helmets. Built using visual data processing and logistic regression modeling for academic data labeling.',
@@ -23,7 +22,6 @@ const projects = [
     image: projectHelmetDetection,
     githubLink: 'https://github.com/ansh215-it/Detection_Helmet'
   },
-
   {
     title: 'Monte Carlo Simulation Monster Chase NPC',
     desc: 'A comprehensive Monte Carlo simulation tool for modeling and analyzing the behavior of a monster chase NPC in a game environment. Utilizes statistical methods to predict outcomes and optimize game mechanics.',
@@ -31,7 +29,6 @@ const projects = [
     image: projectMonteCarlo,
     githubLink: 'https://github.com/ansh215-it/MonteCarlo_Implementation'
   },
-
   {
     title: 'SAKURA (Sistem Analisis Kuliah Unggul dan Rekapitulasi Akademik)',
     desc: 'A secure and user-friendly login system for an academic website, featuring role-based access control and data validation.',
@@ -44,7 +41,7 @@ const projects = [
 const Project: React.FC = () => {
   return (
     <section id="project" className="section-container pt-24">
-      <AnimatedWrapper>
+      {/* AnimatedWrapper dihapus sementara untuk testing */}
         <h2 className="text-5xl font-extrabold text-textPrimary mb-8">Notable Projects</h2>
         <div className="w-full h-px bg-white/10 mb-12"></div>
 
@@ -68,7 +65,7 @@ const Project: React.FC = () => {
                       href={project.githubLink} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="bg-white/90 hover:bg-white rounded-full p-1.5 transition-all hover:scale-110 inline-flex items-center justify-center shadow-md"
+                      className="bg-white/90 hover:bg-white rounded-full p-1.5 transition-all hover:scale-110 inline-flex items-center justify-center shadow-md shrink-0 ml-4"
                       title="View Source on GitHub"
                     >
                       <img 
@@ -104,7 +101,6 @@ const Project: React.FC = () => {
             </div>
           ))}
         </div>
-      </AnimatedWrapper>
     </section>
   );
 };
